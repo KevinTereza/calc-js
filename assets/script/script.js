@@ -5,6 +5,10 @@ const resultInput = document.getElementById('result');
 
 const allowedKeys = ["(", ")", "/", "*", "-", "+", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0", ".", "%", " "];
 
+window.onload = () => {
+    calculateInput.focus();
+};
+
 const clearBtn = document.getElementById('clear').addEventListener('click', () => {
     calculateInput.value = '';
     resultInput.value = '';
@@ -67,5 +71,8 @@ const copyBtn = document.getElementById('copyToClipboard').addEventListener('cli
         btn.innerText = 'Copied!';
         btn.classList.add('success');
         navigator.clipboard.writeText(resultInput.value)
-    }
+    } else {
+    btn.innerText = "Copy"
+    btn.classList.remove("success")
+  }
 })
